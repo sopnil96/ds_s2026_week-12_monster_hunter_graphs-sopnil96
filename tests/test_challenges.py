@@ -83,19 +83,16 @@ def test_build_weighted_hunter_map_keeps_lowest_duplicate_weight():
 
 def test_build_weighted_hunter_map_rejects_non_positive_weights_zero():
     edges = [("Old Theater", "Train Station", 0)]
-    edges = [("Old Theater", "Train Station", bad_weight)]
     with pytest.raises(ValueError):
         build_weighted_hunter_map(edges)
 
 def test_build_weighted_hunter_map_rejects_non_positive_weights_negative_one():
     edges = [("Old Theater", "Train Station", -1)]
-    edges = [("Old Theater", "Train Station", bad_weight)]
     with pytest.raises(ValueError):
         build_weighted_hunter_map(edges)
 
 def test_build_weighted_hunter_map_rejects_non_positive_weights_negative_ten():
     edges = [("Old Theater", "Train Station", -10)]
-    edges = [("Old Theater", "Train Station", bad_weight)]
     with pytest.raises(ValueError):
         build_weighted_hunter_map(edges)
 
